@@ -336,7 +336,7 @@ function InstallContentManager {
   # Installing CM
   while :; do
     echo "Installing Content Manager..." &&
-    wget -q "https://acstuff.club/app/latest.zip" -P "temp/" &&
+    (wget -q "https://acstuff.club/app/latest.zip" -P "temp/" || wget -q "https://acstuff.ru/app/latest.zip" -P "temp/") &&
     unzip -q "temp/latest.zip" -d "temp/" &&
     mv "temp/Content Manager.exe" "temp/AssettoCorsa.exe" &&
     mv -n "$AC_COMMON/AssettoCorsa.exe" "$AC_COMMON/AssettoCorsa_original.exe" &&
